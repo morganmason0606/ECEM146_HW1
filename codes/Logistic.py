@@ -131,12 +131,10 @@ class Logistic(object):
         # YOUR CODE HERE:
         # PREDICT THE LABELS OF X 
         # ================================================================ #
-        #print(f"in prediction with in {X.shape}")
         X = self.gen_features(X)
         h_arr = np.dot(X, self.w)
         y_pred = 1. / (1 + np.exp(-h_arr))
         y_pred = y_pred.squeeze()
-        #print(f"out prediction with shape {y_pred.shape}")
         y_pred = np.vectorize((lambda x: 1 if x > 0.5 else -1))(y_pred)
         y_pred = y_pred.reshape((-1,1))
         # ================================================================ #
