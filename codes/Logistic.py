@@ -100,18 +100,20 @@ class Logistic(object):
                 # ================================================================ #
                 # END YOUR CODE HERE
                 # ================================================================ #
+
                 loss = 0.0
                 grad = np.zeros_like(self.w)
+
                 # ================================================================ #
                 # YOUR CODE HERE: 
                 # evaluate loss and gradient for batch data
                 # save loss as loss and gradient as grad
                 # update the weights self.w
                 # ================================================================ #
+
                 loss, grad = self.loss_and_grad(X_batch, y_batch)
-                #print(f"gradients of :{grad.shape} ; w shape : {self.w.shape}")
                 self.w = np.subtract(self.w , eta*grad)
-                #print(f"shape of w {self.w.shape}")
+
                 # ================================================================ #
                 # END YOUR CODE HERE
                 # ================================================================ #
